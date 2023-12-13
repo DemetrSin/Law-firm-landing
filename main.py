@@ -15,19 +15,14 @@ app.mount('/static', StaticFiles(directory='static'), name='static')
 templates = Jinja2Templates(directory='templates')
 
 
+class ContactForm(BaseModel):
+    name: str
+    email: EmailStr
+    phone: str
+    message: str
 
-# class ContactForm(BaseModel):
-#     name: constr(min_length=1, max_length=50) = Form(...)
-#     email: EmailStr = Form(...)
-#     phone: constr() = Form(...)
-#     message: constr(min_length=20, max_length=1000) = Form(...)
-
-    # @field_validator("phone")
-    # @classmethod
-    # def validate_phone(cls, value):
-    #     if not value.isdigit() or len(value) != 10:
-    #         raise ValueError("Phone number must be exactly 10 digits.")
-    #     return value
+    @classmethod
+    def as_form(cls, name: str = Form(), email: EmailStr = Form(), phone: str = Form(), message: str = Form()) -> 'ContactForm': return cls(name=name, email=email, phone=phone, message=message)
 
 
 # class ResponseModel(BaseModel):
@@ -54,31 +49,33 @@ async def get_about(request: Request):
 async def get_contact(request: Request):
     return templates.TemplateResponse('contact.html', {'request': request})
 
+#Provide SMTP
+@app.post("/contact")
+async def post_contact(form: ContactForm = Depends(ContactForm.as_form)):
+    return form
+
+
+#simple example
 
 # @app.post('/contact')
-# async def post_contact(form: ContactForm = Form(...)):
-#     if not form.is_valid():
-#         raise HTTPException(status_code=422, detail="Invalid contact form data")
-#     return {"message": "Contact form submitted successfully"}
-
-
-@app.post('/contact')
-async def post_contact(
-    name: constr(min_length=5, max_length=50) = Form(...),
-    email: EmailStr = Form(...),
-    phone: constr() = Form(...),
-    message: constr(min_length=20, max_length=1000) = Form(...)
-):
-    data = {
-            "name": name,
-            "email": email,
-            "phone": phone,
-            "message": message,
-        }
-    return {"message": "Form submitted successfully!", "data": data}
+# async def post_contact(
+#     name: str = Form(...),
+#     email: EmailStr = Form(...),
+#     phone: str = Form(...),
+#     message: str = Form(...)
+# ):
+#     data = {
+#             "name": name,
+#             "email": email,
+#             "phone": phone,
+#             "message": message,
+#         }
+#     return {"message": "Form submitted successfully!", "data": data}
 
 
 
+
+#send
 
 
 
