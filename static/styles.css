@@ -1,13 +1,50 @@
 body {
   background-position: center;
   background-size: cover;
-  padding-top: 56px;
-}
-
-.jumbotron{
-  margin-top: 7% !important;
 }
 
 .card {
     min-height: 250px;
   }
+
+#contact-response {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+#contact-response h2 {
+    font-weight: bold;
+}
+
+#contact-response p {
+    font-weight: bold;
+}
+
+#contact-response ul {
+    list-style: none;
+    padding: 0;
+}
+
+#contact-response li {
+    font-weight: bold;
+}
+
+
+/*textarea, input:invalid {*/
+/*  border: 2px dashed red;*/
+/*}*/
+
+/*input:invalid:required {*/
+/*  background-image: linear-gradient(to right, gray, lightgreen);*/
+/*}*/
+
+/*textarea:invalid:required {*/
+/*  background-image: linear-gradient(to right, gray, lightgreen);*/
+/*}*/
+
+/*textarea, input:valid {*/
+/*  border: 2px solid black;*/
+/*}*/

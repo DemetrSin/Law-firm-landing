@@ -11,17 +11,9 @@
             <li><strong>Phone:</strong> {{ form.phone }}</li>
             <li><strong>Message:</strong> {{ form.message }}</li>
         </ul>
-        {% if form.errors %}
-    <ul class="error-list">
-        {% for field_name, errors in form.errors.items() %}
-            {% for error in errors %}
-                <li>{{ error }}</li>
-            {% endfor %}
-        {% endfor %}
-    </ul>
-{% endif %}
+
 
 
     </div>
 </section>
-{% endblock content %}
+{% endblock %}

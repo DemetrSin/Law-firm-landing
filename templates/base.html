@@ -7,61 +7,54 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="{{ url_for('static', path='/styles.css') }}">
 </head>
-<body style="background-image: url('static/images/pexels-pixabay-48148.jpg');">
+<body style="background-image: url('static/images/pexels-pixabay-48148.jpg');" class="d-flex flex-column min-vh-100">
 
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #333;">
-  <div class="container">
-    <a class="navbar-brand" href="#">
-      <img src="/static/images/223.jpg" alt="Compromise Logo" width="50">
-    </a>
-    <h1 style="color: white;">Compromise</h1>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link active"
-            aria-current="page" href="{{ url_for('get_home') }}">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link"
-            href="{{ url_for('get_services') }}">Services</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link"
-            href="{{ url_for('get_about') }}">About Us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " href="{{ url_for('get_contact') }}">Contact
-          </a>
-        </li>
-      </ul>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" style="background-color: #333;">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="/static/images/223.jpg" alt="Compromise Logo" width="50">
+      </a>
+      <h1 style="color: white;">Compromise</h1>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active"
+              aria-current="page" href="{{ url_for('get_home') }}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"
+              href="{{ url_for('get_services') }}">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('get_representatives') }}">Representatives</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"
+              href="{{ url_for('get_about') }}">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="{{ url_for('get_contact') }}">Contact
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
-<div class="jumbotron jumbotron-fluid mt-5">
-  <div class="container">
-    <h1 class="display-4">Your Trusted Partner in Legal Matters</h1>
-    <p class="lead">
-  Compromise Law Firm is dedicated to delivering high-quality legal services tailored to meet the unique needs of individuals and businesses. Our team of experienced attorneys is committed to providing comprehensive solutions that align with your legal requirements and objectives.
+  <main class="flex-grow-1">
+    {% block content %}
+    {% endblock content %}
+  </main>
 
-  Whether you're an individual seeking guidance on personal legal matters or a business navigating complex legal challenges, we're here to offer reliable advice and representation. From contract reviews and negotiations to litigation support, our firm is your trusted partner in achieving legal success.
-</p>
-
-  </div>
-</div>
-
-
-{% block content %}
-{% endblock content %}
-
-  <footer class="py-3 bg-dark text-light">
+  <footer class="py-3 bg-dark text-light mt-auto">
     <div class="container">
       <p class="text-center mb-0">Copyright &copy; 2023 Compromise Law Firm</p>
     </div>
   </footer>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
