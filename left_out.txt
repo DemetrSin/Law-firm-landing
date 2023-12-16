@@ -1,0 +1,44 @@
+FUNCS FOR SEND MAIL
+
+# def send_email_background(background_tasks: BackgroundTasks, body: dict):
+#     html_body = "<html><body>"
+#     for key, value in body.items():
+#         html_body += f"<p><h3>{key}: {value}</h3></p>"
+#     html_body += "</body></html>"
+#
+#     message = MessageSchema(
+#         subject='Test',
+#         recipients=['sonofgod1551@gmail.com'],
+#         body=html_body,
+#         subtype=MessageType.html,
+#     )
+#
+#     fm = FastMail(conf)
+#     background_tasks.add_task(
+#         fm.send_message, message, template_name='templates/email.html')
+
+
+# async def send_email_async(body: dict):
+#     html_body = "<html><body>"
+#     for key, value in body.items():
+#         html_body += f"<p>{key}: {value}</p>"
+#     html_body += "</body></html>"
+#
+#     message = MessageSchema(
+#         subject='Test',
+#         recipients=['sonofgod1551@gmail.com'],
+#         body=html_body,
+#         subtype=MessageType.html,
+#     )
+#
+#     fm = FastMail(conf)
+#     await fm.send_message(message, template_name='templates/email.html')
+
+
+ASYNC OPTION FOR /contact ROUTE TO SEND MAIL
+
+# @app.post("/contact", response_model=ResponseModel)
+# async def post_contact(request: Request, form: ContactForm = Depends(ContactForm.as_form)):
+#     data = form.model_dump()
+#     await send_mail.send_email_async(data)
+#     return templates.TemplateResponse('contact_response.html', {'request': request, 'form': form})
