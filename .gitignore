@@ -32,7 +32,7 @@ MANIFEST
 
 # Virtual environment
 venv/
-ENV/
+.env/
 
 # PyCharm files
 .idea/

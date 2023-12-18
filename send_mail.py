@@ -3,7 +3,7 @@ from fastapi import Request
 from fastapi import BackgroundTasks
 from fastapi_mail import FastMail, MessageSchema, ConnectionConfig, MessageType
 from fastapi.templating import Jinja2Templates
-
+# from pathlib import Path
 from dotenv import load_dotenv
 
 load_dotenv('.env')
@@ -17,7 +17,7 @@ class Envs:
     MAIL_FROM = os.getenv('MAIL_FROM')
     MAIL_PORT = int(os.getenv('MAIL_PORT'))
     MAIL_SERVER = os.getenv('MAIL_SERVER')
-    MAIL_FROM_NAME = os.getenv('MAIN_FROM_NAME')
+    MAIL_FROM_NAME = os.getenv('MAIL_FROM_NAME')
 
 
 conf = ConnectionConfig(
@@ -43,11 +43,12 @@ def send_email_background(background_tasks: BackgroundTasks, body: dict, request
 
     message = MessageSchema(
         subject='Test',
-        recipients=['sonofgod1551@gmail.com'],
+        recipients=['8637868.n@gmail.com'],
         body=rendered_template,
         subtype=MessageType.html,
     )
 
     fm = FastMail(conf)
+
     background_tasks.add_task(
         fm.send_message, message, template_name=None)
