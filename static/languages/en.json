@@ -1,0 +1,89 @@
+{
+    "_COMMENT": "SECTION SERVICES",
+
+    "our_services": "Our Services",
+    "legal_consultation": "Legal Consultation",
+    "legal_consultation_desc": "Expert legal advice to guide you through complex issues.",
+    "litigation_support": "Litigation Support",
+    "litigation_support_desc": "Representation and support during legal disputes and litigation.",
+    "real_estate_transactions": "Real Estate Transactions",
+    "real_estate_transactions_desc": "Assistance with buying, selling, and leasing real estate properties.",
+
+    "_COMMENT": "SECTION REPRESENTATIVES",
+
+    "our_representatives": "Our Representatives",
+    "owner": "Owner",
+    "owner_name": "Name of the Owner",
+    "employee_1": "Employee 1",
+    "employee_1_name": "Name of Employee 1",
+    "employee_2": "Employee 2",
+    "employee_2_name": "Name of Employee 2",
+    "employee_3": "Employee 3",
+    "employee_3_name": "Name of Employee 3",
+    "employee_4": "Employee 4",
+    "employee_4_name": "Name of Employee 4",
+
+
+    "_COMMENT": "SECTION HOME",
+
+
+    "trusted_partner": "Your Trusted Partner in Legal Matters",
+    "your_trusted_partner": "Your Trusted Partner in Legal Matters",
+    "firm_description": "Compromise Law Firm is dedicated to delivering high-quality legal services tailored to meet the unique needs of individuals and businesses. Our team of experienced attorneys is committed to providing comprehensive solutions that align with your legal requirements and objectives. Whether you're an individual seeking guidance on personal legal matters or a business navigating complex legal challenges, we're here to offer reliable advice and representation. From contract reviews and negotiations to litigation support, our firm is your trusted partner in achieving legal success.",
+
+
+    "_COMMENT": "SECTION CONTACT RESPONSE",
+
+
+    "thank_you_submission": "Thank you for your submission!",
+    "thank_you": "Thank you for your submission!",
+    "received_message": "We have received your message. We will get back to you as soon as possible.",
+    "form_data_submitted": "Form data submitted:",
+    "name": "Name:",
+    "email": "Email:",
+    "phone": "Phone:",
+    "message": "Message:",
+
+
+    "_COMMENT": "SECTION CONTACT",
+
+
+    "contact_us": "Contact Us",
+  "contact_information": "Contact Information",
+  "phone_info": "Phone: (+380) 99 012-34-56",
+  "email_info": "Email: info@compromise.com",
+  "contact_form": "Contact Form",
+  "name_label": "Name:",
+  "name_placeholder": "Petr Frank",
+  "email_label": "Email:",
+  "email_placeholder": "example@gmail.com",
+  "phone_label": "Phone Number:",
+  "phone_placeholder": "380991234567 or 0991234567",
+  "phone_invalid_feedback": "Please enter a valid phone number.",
+  "message_label": "Message:",
+  "message_placeholder": "Enter your certain problem here:",
+  "submit_button": "Submit",
+
+
+    "_COMMENT": "SECTION ABOUT",
+
+
+  "about_compromise": "About Compromise",
+    "about_compromise_description": "Compromise Law Firm is a leading legal services provider dedicated to delivering excellence in the practice of law. Our firm was founded with a commitment to integrity, professionalism, and a client-centric approach to legal solutions. With a rich history spanning over a decade, Compromise has established itself as a trusted partner for individuals and businesses seeking comprehensive legal support. Our team of experienced attorneys brings a wealth of knowledge across various practice areas, ensuring that our clients receive tailored advice and representation. At the heart of Compromise is a passionate and dedicated team that values collaboration, innovation, and a relentless pursuit of justice. We believe in building lasting relationships with our clients, understanding their unique needs, and providing strategic legal guidance. Our core values include transparency, ethical practice, and a commitment to delivering results. Whether it's navigating complex legal matters, resolving disputes, or providing proactive legal advice, Compromise is here to make a positive impact on your legal journey. We take pride in our contributions to the legal community and the positive outcomes we've achieved for our clients. Explore the depth of our expertise and discover how Compromise can be your trusted ally in legal matters.",
+
+
+    "_COMMENT": "SECTION BASE",
+
+
+  "page_title": "Compromise Law Firm",
+    "navbar_title": "Compromise",
+    "nav_home": "Home",
+    "nav_services": "Services",
+    "nav_representatives": "Representatives",
+    "nav_about": "About Us",
+    "nav_contact": "Contact",
+    "lang_button": "Language",
+    "lang_english": "English",
+    "lang_russian": "Русский",
+    "footer_copyright": "Copyright &copy; 2023 Compromise Law Firm"
+}

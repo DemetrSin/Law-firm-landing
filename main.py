@@ -1,9 +1,9 @@
-import warnings
 from fastapi import FastAPI, Request, Form, BackgroundTasks, Depends, HTTPException
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel, EmailStr, field_validator, PositiveInt
+# from babel import _
 
 from send_mail import send_email_background
 
@@ -11,8 +11,19 @@ app = FastAPI(debug=True)
 
 app.mount('/static', StaticFiles(directory='static'), name='static')
 
-
 templates = Jinja2Templates(directory='templates')
+
+supported_languages = ["en_US", "ru_RU"]
+
+
+# @app.middleware("http")
+# async def get_lang(request: Request, call_next):
+#     lang = request.headers.get("Accept-Language", "en_US")
+#     if lang not in supported_languages:
+#         lang = "en_US"
+#     request.state.lang = lang
+#     response = await call_next(request)
+#     return response
 
 
 class ContactForm(BaseModel):
@@ -38,6 +49,7 @@ class ContactForm(BaseModel):
     def message_validator(cls, value: str):
         if len(value) > 1000:
             raise ValueError("Message must contain no more then 1000 characters")
+        return value
 
 
 class ResponseModel(BaseModel):
