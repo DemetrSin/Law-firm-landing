@@ -2,15 +2,18 @@
 {% block content %}
 <section id="contact-response" class="py-5">
     <div class="container">
-        <h2 data-i18n="thank_you">Thank you for your submission!</h2>
-        <p data-i18n="received_message">We have received your message. We will get back to you as soon as possible.</p>
-        <p data-i18n="form_data_submitted">Form data submitted:</p>
+        <h2>Thank you for your submission!</h2>
+        <p>We have received your message. We will get back to you as soon as possible.</p>
+        <p>Form data submitted:</p>
         <ul>
-            <li><strong data-i18n="name">Name:</strong> {{ form.name }}</li>
-            <li><strong data-i18n="email">Email:</strong> {{ form.email }}</li>
-            <li><strong data-i18n="phone">Phone:</strong> {{ form.phone }}</li>
-            <li><strong data-i18n="message">Message:</strong> {{ form.message }}</li>
+            <li><strong>Name:</strong> {{ form.name }}</li>
+            <li><strong>Email:</strong> {{ form.email }}</li>
+            <li><strong>Phone:</strong> {{ form.phone }}</li>
+            <li><strong>Message:</strong> {{ form.message }}</li>
         </ul>
+
+
+
     </div>
 </section>
 {% endblock %}

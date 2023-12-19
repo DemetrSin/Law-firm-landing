@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="{{ lang }}">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-i18n="page_title">Compromise Law Firm</title>
+  <title>Compromise Law Firm</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="{{ url_for('static', path='/styles.css') }}">
 </head>
-<body class="d-flex flex-column min-vh-100">
-  <div class="background-image"></div>
+<body style="background-image: url('static/images/pexels-pixabay-48148.jpg');" class="d-flex flex-column min-vh-100">
+
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" style="background-color: #333;">
     <div class="container">
       <a class="navbar-brand" href="#">
         <img src="/static/images/223.jpg" alt="Compromise Logo" width="50">
       </a>
-      <h1 style="color: white;" data-i18n="navbar_title">Compromise</h1>
+      <h1 style="color: white;">Compromise</h1>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -22,34 +22,24 @@
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
             <a class="nav-link active"
-              aria-current="page" href="{{ url_for('get_home') }}" data-i18n="nav_home">Home</a>
+              aria-current="page" href="{{ url_for('get_home') }}">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link"
-              href="{{ url_for('get_services') }}" data-i18n="nav_services">Services</a>
+              href="{{ url_for('get_services') }}">Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('get_representatives') }}" data-i18n="nav_representatives">
-              Representatives</a>
+            <a class="nav-link" href="{{ url_for('get_representatives') }}">Representatives</a>
           </li>
           <li class="nav-item">
             <a class="nav-link"
-              href="{{ url_for('get_about') }}" data-i18n="nav_about">About Us</a>
+              href="{{ url_for('get_about') }}">About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('get_contact') }}" data-i18n="nav_contact">Contact
+            <a class="nav-link " href="{{ url_for('get_contact') }}">Contact
             </a>
           </li>
         </ul>
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="langDropdown" data-bs-toggle="dropdown" aria-expanded="false" data-i18n="lang_button">
-            Language
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="langDropdown">
-            <li><a class="dropdown-item" id="en" href="?lang=en" onclick="changeLanguage('en')" data-i18n="lang_english">English</a></li>
-            <li><a class="dropdown-item" id="ru" href="?lang=ru" onclick="changeLanguage('ru')" data-i18n="lang_russian">Русский</a></li>
-          </ul>
-        </div>
       </div>
     </div>
   </nav>
@@ -61,12 +51,10 @@
 
   <footer class="py-3 bg-dark text-light mt-auto">
     <div class="container">
-      <p class="text-center mb-0" data-i18n="footer_copyright">Copyright &copy; 2023 Compromise Law Firm</p>
+      <p class="text-center mb-0">Copyright &copy; 2023 Compromise Law Firm</p>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="static/js/trans.js"></script>
-
 </body>
 </html>

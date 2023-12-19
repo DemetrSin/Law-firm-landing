@@ -1,23 +1,6 @@
-.background-image {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('images/pexels-pixabay-48148.jpg');
-  background-repeat: no-repeat;
+body {
+  background-position: center;
   background-size: cover;
-  background-position: center center;
-  z-index: -1;
-  opacity: 0.6;
-}
-
-.jumbotron h1.display-4 {
-  font-weight: normal;
-}
-
-.lead {
-    font-weight: normal;
 }
 
 .card {
@@ -48,3 +31,20 @@
 #contact-response li {
     font-weight: bold;
 }
+
+
+/*textarea, input:invalid {*/
+/*  border: 2px dashed red;*/
+/*}*/
+
+/*input:invalid:required {*/
+/*  background-image: linear-gradient(to right, gray, lightgreen);*/
+/*}*/
+
+/*textarea:invalid:required {*/
+/*  background-image: linear-gradient(to right, gray, lightgreen);*/
+/*}*/
+
+/*textarea, input:valid {*/
+/*  border: 2px solid black;*/
+/*}*/
