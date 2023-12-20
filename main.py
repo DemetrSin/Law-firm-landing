@@ -1,4 +1,3 @@
-import warnings
 from fastapi import FastAPI, Request, Form, BackgroundTasks, Depends, HTTPException
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
@@ -7,11 +6,14 @@ from pydantic import BaseModel, EmailStr, field_validator, PositiveInt
 
 from send_mail import send_email_background
 
-app = FastAPI(debug=True)
+
+app = FastAPI(debug=False)
 
 app.mount('/static', StaticFiles(directory='static'), name='static')
 
 templates = Jinja2Templates(directory='templates')
+
+supported_languages = ["en_US", "ru_RU"]
 
 
 class ContactForm(BaseModel):
@@ -21,9 +23,7 @@ class ContactForm(BaseModel):
     message: str
 
     @classmethod
-    def as_form(cls, name: str = Form(), email: EmailStr = Form(), phone: str = Form(),
-                message: str = Form()) -> 'ContactForm':
-        return cls(name=name, email=email, phone=phone, message=message)
+    def as_form(cls, name: str = Form(), email: EmailStr = Form(), phone: str = Form(), message: str = Form()) -> 'ContactForm': return cls(name=name, email=email, phone=phone, message=message)
 
     @field_validator('name')
     @classmethod
@@ -34,11 +34,12 @@ class ContactForm(BaseModel):
             raise ValueError('String length should not exceed 100 characters')
         return value
 
-    # @field_validator('message')
-    # @classmethod
-    # def message_validator(cls, value: str):
-    #     if len(value) > 1000:
-    #         raise ValueError("Message must contain no more then 1000 characters")
+    @field_validator('message')
+    @classmethod
+    def message_validator(cls, value: str):
+        if len(value) > 1000:
+            raise ValueError("Message must contain no more then 1000 characters")
+        return value
 
 
 class ResponseModel(BaseModel):
@@ -72,8 +73,7 @@ async def get_contact(request: Request):
 
 
 @app.post("/contact")
-async def post_contact(background_tasks: BackgroundTasks, request: Request,
-                       form: ContactForm = Depends(ContactForm.as_form)):
+async def post_contact(background_tasks: BackgroundTasks, request: Request, form: ContactForm = Depends(ContactForm.as_form)):
     data = form.model_dump()
     send_email_background(background_tasks, data, request)
     return templates.TemplateResponse('contact_response.html', {'request': request, 'form': form})
