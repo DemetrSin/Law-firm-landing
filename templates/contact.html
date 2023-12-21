@@ -20,8 +20,8 @@
                         <div class="mb-3">
                             <label for="name" class="form-label" data-i18n="name_label">Name:</label>
                             <input type="text" class="form-control" id="name" name="name" pattern="[A-Za-zА-Яа-яЁё]+"
-                                   title="Please enter only letters" required placeholder="Petr Frank"
-                                   data-i18n="name_placeholder">
+                                   title="Please enter only letters" data-i18n='name_placeholder' required
+                                   placeholder="Petr Frank">
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label" data-i18n="email_label">Email:</label>
@@ -37,11 +37,13 @@
                                 number.
                             </div>
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3 input-group">
                             <label for="message" class="form-label" data-i18n="message_label">Message:</label>
-                            <textarea class="form-control" id="message" name="message" rows="3" minlength="2"
-                                      maxlength="1000" required placeholder="Enter your certain problem here:"
-                                      data-i18n="message_placeholder"></textarea>
+
+                            <input class="form-control" id="message" name="message" minlength="2"
+                                   maxlength="1000" data-i18n="message_placeholder" required
+                                   placeholder="Enter your certain problem here:">
+
                         </div>
                         <button type="submit" class="btn btn-dark" data-i18n="submit_button">Submit</button>
                     </form>
