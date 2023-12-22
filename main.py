@@ -1,3 +1,4 @@
+import uvicorn
 from fastapi import FastAPI, Request, Form, BackgroundTasks, Depends, HTTPException
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
@@ -77,3 +78,7 @@ async def post_contact(background_tasks: BackgroundTasks, request: Request, form
     data = form.model_dump()
     send_email_background(background_tasks, data, request)
     return templates.TemplateResponse('contact_response.html', {'request': request, 'form': form})
+
+
+if __name__ == '__main__':
+    uvicorn.run(app, host='127.0.0.1', port=8000)
