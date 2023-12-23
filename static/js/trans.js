@@ -3,6 +3,14 @@ function updateContent(langData) {
     document.querySelectorAll('[data-i18n]').forEach(element => {
         const key = element.getAttribute('data-i18n');
         element.textContent = langData[key];
+
+        if (element.getAttribute('data-i18n') === 'name_placeholder') {
+            element.setAttribute('placeholder', langData[key]);
+
+        } else if (element.getAttribute('data-i18n') === "message_placeholder") {
+            element.setAttribute('placeholder', langData[key]);
+
+        }
     });
 }
 
