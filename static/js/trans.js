@@ -7,7 +7,7 @@ function updateContent(langData) {
         if (element.getAttribute('data-i18n') === 'name_placeholder') {
             element.setAttribute('placeholder', langData[key]);
 
-        } else if (element.getAttribute('data-i18n') === "message_placeholder") {
+        } if (element.getAttribute('data-i18n') === 'message_placeholder') {
             element.setAttribute('placeholder', langData[key]);
 
         }
