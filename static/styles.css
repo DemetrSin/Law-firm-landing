@@ -112,3 +112,6 @@
     transition: width 0.5s;  /* Время эффекта */
 }
 
+/*:focus::-webkit-input-placeholder { color:transparent; }*/
+/*:focus::-moz-placeholder { color:transparent; }*/
+/*:focus::placeholder { color:transparent; }*/

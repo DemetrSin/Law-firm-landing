@@ -1,18 +1,25 @@
-// Function to update content based on selected language
 function updateContent(langData) {
     document.querySelectorAll('[data-i18n]').forEach(element => {
-        const key = element.getAttribute('data-i18n');
-        element.textContent = langData[key];
-
+        // Сохраняем значение атрибута data-i18n в переменной key
+        let key = element.getAttribute('data-i18n');
+        // Проверяем, равен ли значение атрибута data-i18n строке 'name_placeholder'
         if (element.getAttribute('data-i18n') === 'name_placeholder') {
+            // Устанавливаем атрибут placeholder элемента со значением из объекта langData соответствующей строки
             element.setAttribute('placeholder', langData[key]);
-
-        } if (element.getAttribute('data-i18n') === 'message_placeholder') {
-            element.setAttribute('placeholder', langData[key]);
-
         }
+        // Проверяем, равен ли значение атрибута data-i18n строке 'message_placeholder'
+        if (element.getAttribute('data-i18n') === 'message_placeholder') {
+            // Устанавливаем атрибут placeholder элемента со значением из объекта langData соответствующей строки
+            element.setAttribute('placeholder', langData[key]);
+        } else (
+            // Устанавливаем textContent элемента с помощью соответствующего значения из объекта langData
+            element.textContent = langData[key])
+
+
     });
 }
+
+
 // Function to set the language preference
 function setLanguagePreference(lang) {
     localStorage.setItem('language', lang);
